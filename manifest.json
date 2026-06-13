@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "IIT KGP ERP Autofill",
+  "version": "1.0",
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "description": "Autofill IIT KGP ERP login details.",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://erp.iitkgp.ac.in/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://erp.iitkgp.ac.in/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
